@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  postgres:
+    container_name: postgres_rs
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1234567
+      - POSTGRES_DB=rsjavacertification
+    volumes:
+      - java_certification_pg_data:/postgres
+
+volumes:
+  java_certification_pg_data:
